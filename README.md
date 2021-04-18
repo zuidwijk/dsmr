@@ -1,1 +1,1 @@
-# custom_dsmr
+# custom_component dsmr
