@@ -4,6 +4,7 @@ from esphome.components import sensor
 from esphome.const import (
     ICON_EMPTY,
     UNIT_VOLT,
+    UNIT_AMPERE,
     UNIT_WATT_HOURS,
     DEVICE_CLASS_POWER,
 )
@@ -64,13 +65,13 @@ CONFIG_SCHEMA = cv.Schema(
             UNIT_WATT_HOURS, ICON_EMPTY, 3, DEVICE_CLASS_POWER
         ),
         cv.Optional("current_l1"): sensor.sensor_schema(
-            "A", ICON_EMPTY, 1, DEVICE_CLASS_POWER
+            UNIT_AMPERE, ICON_EMPTY, 1, DEVICE_CLASS_POWER
         ),
         cv.Optional("current_l2"): sensor.sensor_schema(
-            "A", ICON_EMPTY, 1, DEVICE_CLASS_POWER
+            UNIT_AMPERE, ICON_EMPTY, 1, DEVICE_CLASS_POWER
         ),
         cv.Optional("current_l3"): sensor.sensor_schema(
-            "A", ICON_EMPTY, 1, DEVICE_CLASS_POWER
+            UNIT_AMPERE, ICON_EMPTY, 1, DEVICE_CLASS_POWER
         ),
         cv.Optional("voltage_l1"): sensor.sensor_schema(
             UNIT_VOLT, ICON_EMPTY, 1, DEVICE_CLASS_POWER
