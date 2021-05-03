@@ -1,5 +1,11 @@
+---
+substitutions:
+  device_name: slimmelezer
+  device_description: "DIY P1 module to read your smart meter"
+
 esphome:
-  name: slimmelezer
+  name: ${device_name}
+  comment: '${device_description}'
   platform: ESP8266
   board: d1_mini
 
@@ -46,16 +52,20 @@ sensor:
       name: dsmr_energy_returned_tariff2
     power_delivered:
       name: power_delivered
-      unit_of_measurement: 'Wh'
       accuracy_decimals: 0
       filters:
         - multiply: 1000
     power_returned:
       name: power_returned
-      unit_of_measurement: 'Wh'
       accuracy_decimals: 0
       filters:
         - multiply: 1000
+    electricity_failures:
+      name: electricity_failures
+      icon: mdi:alert
+    electricity_long_failures:
+      name: electricity_long_failures
+      icon: mdi:alert
     voltage_l1:
       name: voltage_l1
     voltage_l2:
