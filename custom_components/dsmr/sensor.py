@@ -79,6 +79,24 @@ CONFIG_SCHEMA = cv.Schema(
         cv.Optional("current_l3"): sensor.sensor_schema(
             UNIT_AMPERE, ICON_EMPTY, 1, DEVICE_CLASS_CURRENT
         ),
+        cv.Optional("power_delivered_l1"): sensor.sensor_schema(
+            UNIT_WATT, ICON_EMPTY, 3, DEVICE_CLASS_POWER
+        ),
+        cv.Optional("power_delivered_l2"): sensor.sensor_schema(
+            UNIT_WATT, ICON_EMPTY, 3, DEVICE_CLASS_POWER
+        ),
+        cv.Optional("power_delivered_l3"): sensor.sensor_schema(
+            UNIT_WATT, ICON_EMPTY, 3, DEVICE_CLASS_POWER
+        ),
+        cv.Optional("power_returned_l1"): sensor.sensor_schema(
+            UNIT_WATT, ICON_EMPTY, 3, DEVICE_CLASS_POWER
+        ),
+        cv.Optional("power_returned_l2"): sensor.sensor_schema(
+            UNIT_WATT, ICON_EMPTY, 3, DEVICE_CLASS_POWER
+        ),
+        cv.Optional("power_returned_l3"): sensor.sensor_schema(
+            UNIT_WATT, ICON_EMPTY, 3, DEVICE_CLASS_POWER
+        ),
         cv.Optional("voltage_l1"): sensor.sensor_schema(
             UNIT_VOLT, ICON_EMPTY, 1, DEVICE_CLASS_VOLTAGE
         ),
