@@ -78,6 +78,36 @@ sensor:
       name: current_l2
     current_l3:
       name: current_l3
+    power_delivered_l1:
+      name: power_delivered_l1
+      accuracy_decimals: 0
+      filters:
+        - multiply: 1000
+    power_delivered_l2:
+      name: power_delivered_l2
+      accuracy_decimals: 0
+      filters:
+        - multiply: 1000
+    power_delivered_l3:
+      name: power_delivered_l3
+      accuracy_decimals: 0
+      filters:
+        - multiply: 1000
+    power_returned_l1:
+      name: power_returned_l1
+      accuracy_decimals: 0
+      filters:
+        - multiply: 1000
+    power_returned_l2:
+      name: power_returned_l2
+      accuracy_decimals: 0
+      filters:
+        - multiply: 1000
+    power_returned_l3:
+      name: power_returned_l3
+      accuracy_decimals: 0
+      filters:
+        - multiply: 1000
     gas_delivered:
       name: gas_delivered
     gas_delivered_be:
