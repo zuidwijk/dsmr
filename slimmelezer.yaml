@@ -29,16 +29,12 @@ ota:
 web_server:
   port: 80
 
-logger:
-  #level: verbose
-  baud_rate: 0
-
 uart:
   baud_rate: 115200 
   rx_pin: D7
 
 dsmr:
-  update_interval: 1s
+#  decryption_key: !secret decryption_key
 
 sensor:
   - platform: dsmr
