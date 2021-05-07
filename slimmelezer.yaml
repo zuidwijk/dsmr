@@ -3,6 +3,9 @@ substitutions:
   device_name: slimmelezer
   device_description: "DIY P1 module to read your smart meter"
 
+external_components:
+  - source: github://zuidwijk/dsmr@external_components
+
 esphome:
   name: ${device_name}
   comment: '${device_description}'
@@ -30,7 +33,7 @@ web_server:
   port: 80
 
 uart:
-  baud_rate: 115200 
+  baud_rate: 115200
   rx_pin: D7
 
 dsmr:
