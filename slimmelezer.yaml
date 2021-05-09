@@ -3,11 +3,28 @@ substitutions:
   device_name: slimmelezer
   device_description: "DIY P1 module to read your smart meter"
 
+external_components:
+  - source: github://zuidwijk/dsmr@external_components
+
 esphome:
   name: ${device_name}
   comment: '${device_description}'
   platform: ESP8266
+  esp8266_restore_from_flash: true
   board: d1_mini
+  on_boot:
+    then:
+      - if:
+          condition:
+            lambda: return id(has_key);
+          then:
+            - lambda: |-
+                std::string key(id(stored_decryption_key), 32);
+                id(dsmr_instance).set_decryption_key(key);
+          else:
+            - logger.log:
+                level: info
+                format: "Not using decryption key. If you need to set a key use Home Assistant service 'ESPHome:  ${device_name}_set_dsmr_key'"
 
 wifi:
   networks:
@@ -23,6 +40,21 @@ captive_portal:
 
 # Enable Home Assistant API
 api:
+  services:
+    service: set_dsmr_key
+    variables:
+      private_key: string
+    then:
+      - logger.log:
+          format: Setting private key %s. Set to empty string to disable
+          args: [private_key.c_str()]
+      - globals.set:
+          id: has_key
+          value: !lambda 'return private_key.length() == 32;'
+      - lambda: |-
+          if (private_key.length() == 32)
+            private_key.copy(id(stored_decryption_key), 32);
+          id(dsmr_instance).set_decryption_key(private_key);
 
 ota:
 
@@ -30,10 +62,20 @@ web_server:
   port: 80
 
 uart:
-  baud_rate: 115200 
+  baud_rate: 115200
   rx_pin: D7
 
+globals:
+  - id: has_key
+    type: bool
+    restore_value: yes
+    initial_value: 'false'
+  - id: stored_decryption_key
+    type: char[32]
+    restore_value: yes
+
 dsmr:
+  id: dsmr_instance
 #  decryption_key: !secret decryption_key
 
 sensor:
