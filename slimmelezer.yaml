@@ -76,14 +76,18 @@ globals:
 
 dsmr:
   id: dsmr_instance
-#  decryption_key: !secret decryption_key
+#  decryption_key: !secret decryption_key // enable this when using decryption for Luxembourg; key like '00112233445566778899AABBCCDDEEFF'
 
 sensor:
   - platform: dsmr
+    energy_delivered_lux:
+      name: dsmr_energy_delivered_lux
     energy_delivered_tariff1:
       name: dsmr_energy_delivered_tariff1
     energy_delivered_tariff2:
       name: dsmr_energy_delivered_tariff2
+    energy_returned_lux:
+      name: dsmr_energy_returned_lux
     energy_returned_tariff1:
       name: dsmr_energy_returned_tariff1
     energy_returned_tariff2:
