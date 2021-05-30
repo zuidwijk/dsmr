@@ -73,6 +73,10 @@ constexpr ObisId equipment_id::id;
 constexpr char equipment_id::name_progmem[];
 constexpr const __FlashStringHelper *equipment_id::name;
 
+constexpr ObisId energy_delivered_lux::id;
+constexpr char energy_delivered_lux::name_progmem[];
+constexpr const __FlashStringHelper *energy_delivered_lux::name;
+
 constexpr ObisId energy_delivered_tariff1::id;
 constexpr char energy_delivered_tariff1::name_progmem[];
 constexpr const __FlashStringHelper *energy_delivered_tariff1::name;
@@ -80,6 +84,10 @@ constexpr const __FlashStringHelper *energy_delivered_tariff1::name;
 constexpr ObisId energy_delivered_tariff2::id;
 constexpr char energy_delivered_tariff2::name_progmem[];
 constexpr const __FlashStringHelper *energy_delivered_tariff2::name;
+
+constexpr ObisId energy_returned_lux::id;
+constexpr char energy_returned_lux::name_progmem[];
+constexpr const __FlashStringHelper *energy_returned_lux::name;
 
 constexpr ObisId energy_returned_tariff1::id;
 constexpr char energy_returned_tariff1::name_progmem[];
