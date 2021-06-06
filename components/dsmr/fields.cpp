@@ -30,7 +30,6 @@
 
 #include "fields.h"
 
-
 using namespace dsmr;
 using namespace dsmr::fields;
 
@@ -51,6 +50,8 @@ constexpr char units::m3[];
 constexpr char units::dm3[];
 constexpr char units::GJ[];
 constexpr char units::MJ[];
+constexpr char units::kvar[];
+constexpr char units::kvarh[];
 
 constexpr ObisId identification::id;
 constexpr char identification::name_progmem[];
@@ -73,6 +74,7 @@ constexpr ObisId equipment_id::id;
 constexpr char equipment_id::name_progmem[];
 constexpr const __FlashStringHelper *equipment_id::name;
 
+/* extra for Lux */
 constexpr ObisId energy_delivered_lux::id;
 constexpr char energy_delivered_lux::name_progmem[];
 constexpr const __FlashStringHelper *energy_delivered_lux::name;
@@ -85,6 +87,7 @@ constexpr ObisId energy_delivered_tariff2::id;
 constexpr char energy_delivered_tariff2::name_progmem[];
 constexpr const __FlashStringHelper *energy_delivered_tariff2::name;
 
+/* extra for Lux */
 constexpr ObisId energy_returned_lux::id;
 constexpr char energy_returned_lux::name_progmem[];
 constexpr const __FlashStringHelper *energy_returned_lux::name;
@@ -96,6 +99,26 @@ constexpr const __FlashStringHelper *energy_returned_tariff1::name;
 constexpr ObisId energy_returned_tariff2::id;
 constexpr char energy_returned_tariff2::name_progmem[];
 constexpr const __FlashStringHelper *energy_returned_tariff2::name;
+
+/* extra for Lux */
+constexpr ObisId total_imported_energy::id;
+constexpr char total_imported_energy::name_progmem[];
+constexpr const __FlashStringHelper *total_imported_energy::name;
+
+/* extra for Lux */
+constexpr ObisId total_exported_energy::id;
+constexpr char total_exported_energy::name_progmem[];
+constexpr const __FlashStringHelper *total_exported_energy::name;
+
+/* extra for Lux */
+constexpr ObisId reactive_power_delivered::id;
+constexpr char reactive_power_delivered::name_progmem[];
+constexpr const __FlashStringHelper *reactive_power_delivered::name;
+
+/* extra for Lux */
+constexpr ObisId reactive_power_returned::id;
+constexpr char reactive_power_returned::name_progmem[];
+constexpr const __FlashStringHelper *reactive_power_returned::name;
 
 constexpr ObisId electricity_tariff::id;
 constexpr char electricity_tariff::name_progmem[];
@@ -208,6 +231,36 @@ constexpr const __FlashStringHelper *power_returned_l2::name;
 constexpr ObisId power_returned_l3::id;
 constexpr char power_returned_l3::name_progmem[];
 constexpr const __FlashStringHelper *power_returned_l3::name;
+
+/* LUX */
+constexpr ObisId reactive_power_delivered_l1::id;
+constexpr char reactive_power_delivered_l1::name_progmem[];
+constexpr const __FlashStringHelper *reactive_power_delivered_l1::name;
+
+/* LUX */
+constexpr ObisId reactive_power_delivered_l2::id;
+constexpr char reactive_power_delivered_l2::name_progmem[];
+constexpr const __FlashStringHelper *reactive_power_delivered_l2::name;
+
+/* LUX */
+constexpr ObisId reactive_power_delivered_l3::id;
+constexpr char reactive_power_delivered_l3::name_progmem[];
+constexpr const __FlashStringHelper *reactive_power_delivered_l3::name;
+
+/* LUX */
+constexpr ObisId reactive_power_returned_l1::id;
+constexpr char reactive_power_returned_l1::name_progmem[];
+constexpr const __FlashStringHelper *reactive_power_returned_l1::name;
+
+/* LUX */
+constexpr ObisId reactive_power_returned_l2::id;
+constexpr char reactive_power_returned_l2::name_progmem[];
+constexpr const __FlashStringHelper *reactive_power_returned_l2::name;
+
+/* LUX */
+constexpr ObisId reactive_power_returned_l3::id;
+constexpr char reactive_power_returned_l3::name_progmem[];
+constexpr const __FlashStringHelper *reactive_power_returned_l3::name;
 
 constexpr ObisId gas_device_type::id;
 constexpr char gas_device_type::name_progmem[];
