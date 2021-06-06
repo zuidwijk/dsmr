@@ -169,6 +169,8 @@ struct units {
   static constexpr char dm3[] = "dm3";
   static constexpr char GJ[] = "GJ";
   static constexpr char MJ[] = "MJ";
+  static constexpr char kvar[] = "kvar";
+  static constexpr char kvarh[] = "kvarh";
 };
 
 const uint8_t GAS_MBUS_ID = 1;
@@ -214,6 +216,12 @@ DEFINE_FIELD(energy_returned_tariff1, FixedValue, ObisId(1, 0, 2, 8, 1), FixedFi
 /* Meter Reading electricity delivered by client (Tariff 2) in 0,001 kWh */
 DEFINE_FIELD(energy_returned_tariff2, FixedValue, ObisId(1, 0, 2, 8, 2), FixedField, units::kWh, units::Wh);
 
+/*
+ * Extra fields used for Luxembourg
+ */
+DEFINE_FIELD(total_imported_energy, FixedValue, ObisId(1, 0, 3, 8, 0), FixedField, units::kvarh, units::kvarh);
+DEFINE_FIELD(total_exported_energy, FixedValue, ObisId(1, 0, 4, 8, 0), FixedField, units::kvarh, units::kvarh);
+
 /* Tariff indicator electricity. The tariff indicator can also be used
  * to switch tariff dependent loads e.g boilers. This is the
  * responsibility of the P1 user */
@@ -223,6 +231,12 @@ DEFINE_FIELD(electricity_tariff, String, ObisId(0, 0, 96, 14, 0), StringField, 4
 DEFINE_FIELD(power_delivered, FixedValue, ObisId(1, 0, 1, 7, 0), FixedField, units::kW, units::W);
 /* Actual electricity power received (-P) in 1 Watt resolution */
 DEFINE_FIELD(power_returned, FixedValue, ObisId(1, 0, 2, 7, 0), FixedField, units::kW, units::W);
+
+/*
+ * Extra fields used for Luxembourg
+ */
+DEFINE_FIELD(reactive_power_delivered, FixedValue, ObisId(1, 0, 3, 7, 0), FixedField, units::kvar, units::kvar);
+DEFINE_FIELD(reactive_power_returned, FixedValue, ObisId(1, 0, 4, 7, 0), FixedField, units::kvar, units::kvar);
 
 /* The actual threshold Electricity in kW. Removed in 4.0.7 / 4.2.2 / 5.0 */
 DEFINE_FIELD(electricity_threshold, FixedValue, ObisId(0, 0, 17, 0, 0), FixedField, units::kW, units::W);
@@ -293,6 +307,25 @@ DEFINE_FIELD(power_returned_l2, FixedValue, ObisId(1, 0, 42, 7, 0), FixedField, 
 /* Instantaneous active power L3 (-P) in W resolution */
 DEFINE_FIELD(power_returned_l3, FixedValue, ObisId(1, 0, 62, 7, 0), FixedField, units::kW, units::W);
 
+/*
+ * LUX
+ */
+/* Instantaneous reactive power L1 (+Q) in W resolution */
+DEFINE_FIELD(reactive_power_delivered_l1, FixedValue, ObisId(1, 0, 23, 7, 0), FixedField, units::none, units::none);
+/* Instantaneous reactive power L2 (+Q) in W resolution */
+DEFINE_FIELD(reactive_power_delivered_l2, FixedValue, ObisId(1, 0, 43, 7, 0), FixedField, units::none, units::none);
+/* Instantaneous reactive power L3 (+Q) in W resolution */
+DEFINE_FIELD(reactive_power_delivered_l3, FixedValue, ObisId(1, 0, 63, 7, 0), FixedField, units::none, units::none);
+
+/*
+ * LUX
+ */
+/* Instantaneous reactive power L1 (-Q) in W resolution */
+DEFINE_FIELD(reactive_power_returned_l1, FixedValue, ObisId(1, 0, 24, 7, 0), FixedField, units::none, units::none);
+/* Instantaneous reactive power L2 (-Q) in W resolution */
+DEFINE_FIELD(reactive_power_returned_l2, FixedValue, ObisId(1, 0, 44, 7, 0), FixedField, units::none, units::none);
+/* Instantaneous reactive power L3 (-Q) in W resolution */
+DEFINE_FIELD(reactive_power_returned_l3, FixedValue, ObisId(1, 0, 64, 7, 0), FixedField, units::none, units::none);
 
 /* Device-Type */
 DEFINE_FIELD(gas_device_type, uint16_t, ObisId(0, GAS_MBUS_ID, 24, 1, 0), IntField, units::none);
