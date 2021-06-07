@@ -38,6 +38,9 @@ wifi:
 
 captive_portal:
 
+# Enable logging
+logger:
+
 # Enable Home Assistant API
 api:
   services:
@@ -154,6 +157,11 @@ sensor:
       name: gas_delivered
     gas_delivered_be:
       name: gas_delivered_be
+  - platform: uptime
+    name: SlimmeLezer Uptime
+  - platform: wifi_signal
+    name: SlimmeLezer WiFi Signal
+    update_interval: 60s
 
 text_sensor:
   - platform: dsmr
@@ -163,3 +171,10 @@ text_sensor:
       name: 'dsmr_p1_version'
     p1_version_be:
       name: 'dsmr_p1_version_be'
+  - platform: wifi_info
+    ip_address:
+      name: SlimmeLezer IP
+    ssid:
+      name: SlimmeLezer SSID
+    bssid:
+      name: SlimmeLezer BSSID
