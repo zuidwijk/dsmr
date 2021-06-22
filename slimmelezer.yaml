@@ -12,6 +12,10 @@ esphome:
   platform: ESP8266
   esp8266_restore_from_flash: true
   board: d1_mini
+  name_add_mac_suffix: true
+  project:
+    name: zuidwijk.slimmelezer
+    version: "1.0"
   on_boot:
     then:
       - if:
@@ -34,7 +38,7 @@ wifi:
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "SlimmeLezer Fallback Hotspot"
-    password: "slimmelezer"
+#    password: "slimmelezer" //password disabled by default
 
 captive_portal:
 
