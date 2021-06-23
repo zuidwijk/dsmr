@@ -8,7 +8,7 @@ external_components:
 
 esphome:
   name: ${device_name}
-  comment: '${device_description}'
+  comment: "${device_description}"
   platform: ESP8266
   esp8266_restore_from_flash: true
   board: d1_mini
@@ -57,7 +57,7 @@ api:
           args: [private_key.c_str()]
       - globals.set:
           id: has_key
-          value: !lambda 'return private_key.length() == 32;'
+          value: !lambda "return private_key.length() == 32;"
       - lambda: |-
           if (private_key.length() == 32)
             private_key.copy(id(stored_decryption_key), 32);
@@ -76,7 +76,7 @@ globals:
   - id: has_key
     type: bool
     restore_value: yes
-    initial_value: 'false'
+    initial_value: "false"
   - id: stored_decryption_key
     type: char[32]
     restore_value: yes
@@ -88,97 +88,97 @@ dsmr:
 sensor:
   - platform: dsmr
     energy_delivered_lux:
-      name: dsmr_energy_delivered_lux
+      name: "Energy Consumed Luxembourg"
     energy_delivered_tariff1:
-      name: dsmr_energy_delivered_tariff1
+      name: "Energy Consumed Tariff 1"
     energy_delivered_tariff2:
-      name: dsmr_energy_delivered_tariff2
+      name: "Energy Consumed Tariff 2"
     energy_returned_lux:
-      name: dsmr_energy_returned_lux
+      name: "Energy Produced Luxembourg"
     energy_returned_tariff1:
-      name: dsmr_energy_returned_tariff1
+      name: "Energy Produced Tariff 1"
     energy_returned_tariff2:
-      name: dsmr_energy_returned_tariff2
+      name: "Energy Produced Tariff 2"
     power_delivered:
-      name: power_delivered
+      name: "Power Consumed"
       accuracy_decimals: 0
       filters:
         - multiply: 1000
     power_returned:
-      name: power_returned
+      name: "Power Produced"
       accuracy_decimals: 0
       filters:
         - multiply: 1000
     electricity_failures:
-      name: electricity_failures
+      name: "Electricity Failures"
       icon: mdi:alert
     electricity_long_failures:
-      name: electricity_long_failures
+      name: "Long Electricity Failures"
       icon: mdi:alert
     voltage_l1:
-      name: voltage_l1
+      name: "Voltage Phase 1"
     voltage_l2:
-      name: voltage_l2
+      name: "Voltage Phase 2"
     voltage_l3:
-      name: voltage_l3
+      name: "Voltage Phase 3"
     current_l1:
-      name: current_l1
+      name: "Current Phase 1"
     current_l2:
-      name: current_l2
+      name: "Current Phase 2"
     current_l3:
-      name: current_l3
+      name: "Current Phase 3"
     power_delivered_l1:
-      name: power_delivered_l1
+      name: "Power Consumed Phase 1"
       accuracy_decimals: 0
       filters:
         - multiply: 1000
     power_delivered_l2:
-      name: power_delivered_l2
+      name: "Power Consumed Phase 2"
       accuracy_decimals: 0
       filters:
         - multiply: 1000
     power_delivered_l3:
-      name: power_delivered_l3
+      name: "Power Consumed Phase 3"
       accuracy_decimals: 0
       filters:
         - multiply: 1000
     power_returned_l1:
-      name: power_returned_l1
+      name: "Power Produced Phase 1"
       accuracy_decimals: 0
       filters:
         - multiply: 1000
     power_returned_l2:
-      name: power_returned_l2
+      name: "Power Produced Phase 2"
       accuracy_decimals: 0
       filters:
         - multiply: 1000
     power_returned_l3:
-      name: power_returned_l3
+      name: "Power Produced Phase 3"
       accuracy_decimals: 0
       filters:
         - multiply: 1000
     gas_delivered:
-      name: gas_delivered
+      name: "Gas Consumed"
     gas_delivered_be:
-      name: gas_delivered_be
+      name: "Gas Consumed Belgium"
   - platform: uptime
-    name: SlimmeLezer Uptime
+    name: "Uptime"
   - platform: wifi_signal
-    name: SlimmeLezer WiFi Signal
+    name: "Wi-Fi Signal"
     update_interval: 60s
 
 text_sensor:
   - platform: dsmr
     identification:
-      name: 'dsmr_identification'
+      name: "DSMR Identification"
     p1_version:
-      name: 'dsmr_p1_version'
+      name: "DSMR Version"
     p1_version_be:
-      name: 'dsmr_p1_version_be'
+      name: "DSMR Verion Belgium"
   - platform: wifi_info
     ip_address:
-      name: SlimmeLezer IP
+      name: "IP Address"
     ssid:
-      name: SlimmeLezer SSID
+      name: "Wi-Fi SSID"
     bssid:
-      name: SlimmeLezer BSSID
+      name: "Wi-Fi BSSID"
