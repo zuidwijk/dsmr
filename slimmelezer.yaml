@@ -37,8 +37,7 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "SlimmeLezer Fallback Hotspot"
-#    password: "slimmelezer" //password disabled by default
+    ssid: ${device_name}
 
 captive_portal:
 
@@ -83,7 +82,8 @@ globals:
 
 dsmr:
   id: dsmr_instance
-#  decryption_key: !secret decryption_key // enable this when using decryption for Luxembourg; key like '00112233445566778899AABBCCDDEEFF'
+  # For Luxembourg users set here your decryption key
+  #decryption_key: !secret decryption_key // enable this when using decryption for Luxembourg; key like '00112233445566778899AABBCCDDEEFF'
 
 sensor:
   - platform: dsmr
