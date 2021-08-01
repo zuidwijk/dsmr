@@ -1,1 +1,1 @@
-# custom_component dsmr
+# DSMR component for ESPHome
