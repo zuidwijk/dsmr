@@ -195,7 +195,7 @@ DEFINE_FIELD(identification, String, ObisId(255, 255, 255, 255, 255, 255), RawFi
 
 /* Version information for P1 output */
 DEFINE_FIELD(p1_version, String, ObisId(1, 3, 0, 2, 8), StringField, 2, 2);
-DEFINE_FIELD(p1_version_be, String, ObisId(0, 0, 96, 1, 4), StringField, 2, 2);
+DEFINE_FIELD(p1_version_be, String, ObisId(0, 0, 96, 1, 4), StringField, 2, 5);
 
 /* Date-time stamp of the P1 message */
 DEFINE_FIELD(timestamp, String, ObisId(0, 0, 1, 0, 0), TimestampField);
