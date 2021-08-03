@@ -174,7 +174,7 @@ text_sensor:
     p1_version:
       name: "DSMR Version"
     p1_version_be:
-      name: "DSMR Verion Belgium"
+      name: "DSMR Version Belgium"
   - platform: wifi_info
     ip_address:
       name: "IP Address"
