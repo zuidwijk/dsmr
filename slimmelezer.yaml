@@ -3,9 +3,6 @@ substitutions:
   device_name: slimmelezer
   device_description: "DIY P1 module to read your smart meter"
 
-external_components:
-  - source: github://zuidwijk/dsmr
-
 esphome:
   name: ${device_name}
   comment: "${device_description}"
