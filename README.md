@@ -1,4 +1,11 @@
 <a href="https://www.buymeacoffee.com/zuidwijk" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>&nbsp;<a href="https://www.zuidwijk.com/product/slimmelezer/" target="_blank">![button_buy-slimmelezer](https://user-images.githubusercontent.com/10123063/127783836-900027f9-e7ea-4084-89e8-89e1cc5f486e.png)</a>
+# Please read!!
+Since ESPHome version 2021.8.0 the DSMR component is natively in ESPHome. Please use this in your code, as all maintenance and changes are published there and **not** in my code
+
+All documentation is on ESPHome self: https://esphome.io/components/sensor/dsmr.html
+
+A big shout out to @glmnet @klaasnicolaas @frenck and off course @home-assistant & @esphome for improving the code and place it within ESPHome natively!
+
 # DSMR component for ESPHome
 The [SlimmeLezer](https://www.zuidwijk.com/product/slimmelezer/) is a compact build easy to use module to read data via the P1 port on a Smart Meter. Based on an ESP8266 (Wemos D1), the SlimmeLezer is perfect to use with [ESPHome](https://esphome.io) and integrates seamless into [Home Assistant](https://www.home-assistant.io).
 
