@@ -106,13 +106,9 @@ sensor:
     power_delivered:
       name: "Power Consumed"
       accuracy_decimals: 0
-      filters:
-        - multiply: 1000
     power_returned:
       name: "Power Produced"
       accuracy_decimals: 0
-      filters:
-        - multiply: 1000
     electricity_failures:
       name: "Electricity Failures"
       icon: mdi:alert
@@ -134,33 +130,21 @@ sensor:
     power_delivered_l1:
       name: "Power Consumed Phase 1"
       accuracy_decimals: 0
-      filters:
-        - multiply: 1000
     power_delivered_l2:
       name: "Power Consumed Phase 2"
       accuracy_decimals: 0
-      filters:
-        - multiply: 1000
     power_delivered_l3:
       name: "Power Consumed Phase 3"
       accuracy_decimals: 0
-      filters:
-        - multiply: 1000
     power_returned_l1:
       name: "Power Produced Phase 1"
       accuracy_decimals: 0
-      filters:
-        - multiply: 1000
     power_returned_l2:
       name: "Power Produced Phase 2"
       accuracy_decimals: 0
-      filters:
-        - multiply: 1000
     power_returned_l3:
       name: "Power Produced Phase 3"
       accuracy_decimals: 0
-      filters:
-        - multiply: 1000
     gas_delivered:
       name: "Gas Consumed"
       state_class: "total_increasing"
