@@ -2,7 +2,7 @@
 substitutions:
   device_name: slimmelezer
   device_description: "DIY P1 module to read your smart meter"
-
+     
 esphome:
   name: ${device_name}
   comment: "${device_description}"
@@ -26,22 +26,22 @@ esphome:
             - logger.log:
                 level: info
                 format: "Not using decryption key. If you need to set a key use Home Assistant service 'ESPHome:  ${device_name}_set_dsmr_key'"
-
+ 
 wifi:
   networks:
     - ssid: !secret wifi_ssid
       password: !secret wifi_password
-
+ 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: ${device_name}
-
+    ap_timeout: 15s
+ 
 captive_portal:
-
+ 
 # Enable logging
 logger:
-  baud_rate: 0
-
+ 
 # Enable Home Assistant API
 api:
   services:
@@ -59,16 +59,16 @@ api:
           if (private_key.length() == 32)
             private_key.copy(id(stored_decryption_key), 32);
           id(dsmr_instance).set_decryption_key(private_key);
-
+ 
 ota:
-
+ 
 web_server:
   port: 80
-
+ 
 uart:
   baud_rate: 115200
   rx_pin: D7
-
+ 
 globals:
   - id: has_key
     type: bool
@@ -77,42 +77,40 @@ globals:
   - id: stored_decryption_key
     type: char[32]
     restore_value: yes
-
+ 
 dsmr:
   id: dsmr_instance
-  # For Luxembourg users set here your decryption key
-  #decryption_key: !secret decryption_key // enable this when using decryption for Luxembourg; key like '00112233445566778899AABBCCDDEEFF'
-
+  # For Luxembourg users set here your decryption key. 
+  # Enable this when using decryption for Luxembourg;
+  # key looks like '00112233445566778899AABBCCDDEEFF'
+  #decryption_key: !secret decryption_key 
+ 
 sensor:
   - platform: dsmr
     energy_delivered_lux:
       name: "Energy Consumed Luxembourg"
-      state_class: "total_increasing"
+      state_class: total_increasing
     energy_delivered_tariff1:
       name: "Energy Consumed Tariff 1"
-      state_class: "total_increasing"
+      state_class: total_increasing
     energy_delivered_tariff2:
       name: "Energy Consumed Tariff 2"
-      state_class: "total_increasing"
+      state_class: total_increasing
     energy_returned_lux:
       name: "Energy Produced Luxembourg"
-      state_class: "total_increasing"
+      state_class: total_increasing
     energy_returned_tariff1:
       name: "Energy Produced Tariff 1"
-      state_class: "total_increasing"
+      state_class: total_increasing
     energy_returned_tariff2:
       name: "Energy Produced Tariff 2"
-      state_class: "total_increasing"
+      state_class: total_increasing
     power_delivered:
       name: "Power Consumed"
-      accuracy_decimals: 0
-      filters:
-        - multiply: 1000
+      accuracy_decimals: 3
     power_returned:
       name: "Power Produced"
-      accuracy_decimals: 0
-      filters:
-        - multiply: 1000
+      accuracy_decimals: 3
     electricity_failures:
       name: "Electricity Failures"
       icon: mdi:alert
@@ -133,46 +131,34 @@ sensor:
       name: "Current Phase 3"
     power_delivered_l1:
       name: "Power Consumed Phase 1"
-      accuracy_decimals: 0
-      filters:
-        - multiply: 1000
+      accuracy_decimals: 3
     power_delivered_l2:
       name: "Power Consumed Phase 2"
-      accuracy_decimals: 0
-      filters:
-        - multiply: 1000
+      accuracy_decimals: 3
     power_delivered_l3:
       name: "Power Consumed Phase 3"
-      accuracy_decimals: 0
-      filters:
-        - multiply: 1000
+      accuracy_decimals: 3
     power_returned_l1:
       name: "Power Produced Phase 1"
-      accuracy_decimals: 0
-      filters:
-        - multiply: 1000
+      accuracy_decimals: 3
     power_returned_l2:
       name: "Power Produced Phase 2"
-      accuracy_decimals: 0
-      filters:
-        - multiply: 1000
+      accuracy_decimals: 3
     power_returned_l3:
       name: "Power Produced Phase 3"
-      accuracy_decimals: 0
-      filters:
-        - multiply: 1000
+      accuracy_decimals: 3
     gas_delivered:
       name: "Gas Consumed"
-      state_class: "total_increasing"
+      state_class: total_increasing
     gas_delivered_be:
       name: "Gas Consumed Belgium"
-      state_class: "total_increasing"
+      state_class: total_increasing
   - platform: uptime
-    name: "Uptime"
+    name: "SlimmeLezer Uptime"
   - platform: wifi_signal
-    name: "Wi-Fi Signal"
+    name: "SlimmeLezer Wi-Fi Signal"
     update_interval: 60s
-
+ 
 text_sensor:
   - platform: dsmr
     identification:
@@ -183,8 +169,11 @@ text_sensor:
       name: "DSMR Version Belgium"
   - platform: wifi_info
     ip_address:
-      name: "IP Address"
+      name: "SlimmeLezer IP Address"
     ssid:
-      name: "Wi-Fi SSID"
+      name: "SlimmeLezer Wi-Fi SSID"
     bssid:
-      name: "Wi-Fi BSSID"
+      name: "SlimmeLezer Wi-Fi BSSID"
+  - platform: version
+    name: "ESPHome Version"
+    hide_timestamp: true
