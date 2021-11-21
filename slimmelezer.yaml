@@ -69,6 +69,7 @@ web_server:
 uart:
   baud_rate: 115200
   rx_pin: D7
+  rx_buffer_size: 1500
  
 globals:
   - id: has_key
