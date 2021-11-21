@@ -156,25 +156,34 @@ sensor:
       state_class: total_increasing
   - platform: uptime
     name: "SlimmeLezer Uptime"
+    entity_category: diagnostic
   - platform: wifi_signal
     name: "SlimmeLezer Wi-Fi Signal"
     update_interval: 60s
+    entity_category: diagnostic
  
 text_sensor:
   - platform: dsmr
     identification:
       name: "DSMR Identification"
+      entity_category: diagnostic
     p1_version:
       name: "DSMR Version"
+      entity_category: diagnostic
     p1_version_be:
       name: "DSMR Version Belgium"
+      entity_category: diagnostic
   - platform: wifi_info
     ip_address:
       name: "SlimmeLezer IP Address"
+      entity_category: diagnostic
     ssid:
       name: "SlimmeLezer Wi-Fi SSID"
+      entity_category: diagnostic
     bssid:
       name: "SlimmeLezer Wi-Fi BSSID"
+      entity_category: diagnostic
   - platform: version
     name: "ESPHome Version"
     hide_timestamp: true
+    entity_category: diagnostic
