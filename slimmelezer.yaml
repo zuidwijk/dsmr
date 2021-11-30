@@ -90,22 +90,16 @@ sensor:
   - platform: dsmr
     energy_delivered_lux:
       name: "Energy Consumed Luxembourg"
-      state_class: total_increasing
     energy_delivered_tariff1:
       name: "Energy Consumed Tariff 1"
-      state_class: total_increasing
     energy_delivered_tariff2:
       name: "Energy Consumed Tariff 2"
-      state_class: total_increasing
     energy_returned_lux:
       name: "Energy Produced Luxembourg"
-      state_class: total_increasing
     energy_returned_tariff1:
       name: "Energy Produced Tariff 1"
-      state_class: total_increasing
     energy_returned_tariff2:
       name: "Energy Produced Tariff 2"
-      state_class: total_increasing
     power_delivered:
       name: "Power Consumed"
       accuracy_decimals: 3
@@ -150,10 +144,8 @@ sensor:
       accuracy_decimals: 3
     gas_delivered:
       name: "Gas Consumed"
-      state_class: total_increasing
     gas_delivered_be:
       name: "Gas Consumed Belgium"
-      state_class: total_increasing
   - platform: uptime
     name: "SlimmeLezer Uptime"
   - platform: wifi_signal
