@@ -42,7 +42,7 @@ uart:
   rx_pin: D7
   baud_rate: 9600
   data_bits: 7
-  parity: NONE
+  parity: EVEN
   stop_bits: 1
   
 dsmr:
