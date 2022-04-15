@@ -23,6 +23,7 @@ wifi:
     ssid: ${device_name}
 
 captive_portal:
+
 # Enable logging
 logger:
   baud_rate: 0
