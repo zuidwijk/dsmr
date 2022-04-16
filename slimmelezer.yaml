@@ -28,17 +28,17 @@ esphome:
                 format: "Not using decryption key. If you need to set a key use Home Assistant service 'ESPHome:  ${device_name}_set_dsmr_key'"
 
 wifi:
-  networks: []
-#    - ssid: !secret wifi_ssid
-#      password: !secret wifi_password
+  - ssid: !secret wifi_ssid
+    password: !secret wifi_password
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: ${device_name}
 
-improv_serial:
-
 captive_portal:
+
+# improv_serial:
+# Improv serial doesnt work when baud_rate is set to 0 under logger
 
 # Enable logging
 logger:
@@ -64,8 +64,9 @@ api:
 
 ota:
 
-dashboard_import:
-  package_import_url: github://zuidwijk/dsmr/slimmelezer.yaml
+# Dashboard doesnt work as I want, so disabled for now
+#dashboard_import:
+#  package_import_url: github://zuidwijk/dsmr/slimmelezer.yaml
 
 web_server:
   port: 80
