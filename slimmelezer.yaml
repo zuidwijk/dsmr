@@ -1,11 +1,9 @@
 ---
 substitutions:
-  device_name: slimmelezer
-  device_description: "DIY P1 module to read your smart meter"
+  device_name: slimmelezer-test
     
 esphome:
   name: ${device_name}
-  comment: "${device_description}"
   platform: ESP8266
   esp8266_restore_from_flash: true
   board: d1_mini
@@ -28,17 +26,10 @@ esphome:
                 format: "Not using decryption key. If you need to set a key use Home Assistant service 'ESPHome:  ${device_name}_set_dsmr_key'"
 
 wifi:
-  - ssid: !secret wifi_ssid
-    password: !secret wifi_password
-
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: ${device_name}
 
 captive_portal:
-
-# improv_serial:
-# Improv serial doesnt work when baud_rate is set to 0 under logger
 
 # Enable logging
 logger:
@@ -64,9 +55,8 @@ api:
 
 ota:
 
-# Dashboard doesnt work as I want, so disabled for now
-#dashboard_import:
-#  package_import_url: github://zuidwijk/dsmr/slimmelezer.yaml
+dashboard_import:
+  package_import_url: github://zuidwijk/dsmr/slimmelezer.yaml@main
 
 web_server:
   port: 80
