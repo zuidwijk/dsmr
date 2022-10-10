@@ -1,6 +1,6 @@
 ---
 substitutions:
-  device_name: slimmelezer-test
+  device_name: slimmelezer
     
 esphome:
   name: ${device_name}
