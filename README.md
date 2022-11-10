@@ -1,7 +1,8 @@
 # ESPHome configuration for Danish energy meters using DSMR
+![L+G E360 & Slimmelezer+](https://i.imgur.com/zvcqowP.jpg)
 
 ##Description
-This is a fork of https://github.com/zuidwijk/dsmr , and the configuration is tested on a [Slimmelezer+](https://www.zuidwijk.com/product/slimmelezer-plus/) on a Landis+Gyr E360 energy meter from the grid company "Netselskabet N1"
+This is a fork of https://github.com/zuidwijk/dsmr (please read this first), and the configuration is tested on a [Slimmelezer+](https://www.zuidwijk.com/product/slimmelezer-plus/) on a Landis+Gyr E360 energy meter from the grid company "Netselskabet N1"
 
 ##How to use
 - The sensors sensor.energy_exported and sensor.energy_imported can be used in the Home Assistant Energy Dashboard
