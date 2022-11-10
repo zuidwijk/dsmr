@@ -85,41 +85,21 @@ globals:
 dsmr:
   id: dsmr_instance
   max_telegram_length: 1700
-  # For Luxembourg users set here your decryption key
-  #decryption_key: !secret decryption_key // enable this when using decryption for Luxembourg; key like '00112233445566778899AABBCCDDEEFF'
 
 sensor:
   - platform: dsmr
     energy_delivered_lux:
       name: "Energy Imported"
       accuracy_decimals: 3
-#    energy_delivered_tariff1:
-#      name: "Energy Consumed Tariff 1"
-#      accuracy_decimals: 3
-#    energy_delivered_tariff2:
-#      name: "Energy Consumed Tariff 2"
-#      accuracy_decimals: 3
     energy_returned_lux:
       name: "Energy Exported"
       accuracy_decimals: 3
-#    energy_returned_tariff1:
-#      name: "Energy Produced Tariff 1"
-#      accuracy_decimals: 3
-#    energy_returned_tariff2:
-#      name: "Energy Produced Tariff 2"
-#      accuracy_decimals: 3
     power_delivered:
       name: "Power Import"
       accuracy_decimals: 3
     power_returned:
       name: "Power Export"
       accuracy_decimals: 3
-#    electricity_failures:
-#      name: "Electricity Failures"
-#      icon: mdi:alert
-#    electricity_long_failures:
-#      name: "Long Electricity Failures"
-#      icon: mdi:alert
     voltage_l1:
       name: "Voltage Phase 1"
     voltage_l2:
@@ -150,10 +130,6 @@ sensor:
     power_returned_l3:
       name: "Power Export Phase 3"
       accuracy_decimals: 3
-#    gas_delivered:
-#      name: "Gas Consumed"
-#    gas_delivered_be:
-#      name: "Gas Consumed Belgium"
   - platform: uptime
     name: "SlimmeLezer Uptime"
     update_interval: 60s
@@ -165,10 +141,6 @@ text_sensor:
   - platform: dsmr
     identification:
       name: "DSMR Identification"
-#    p1_version:
-#      name: "DSMR Version"
-#    p1_version_be:
-#      name: "DSMR Version Belgium"
   - platform: wifi_info
     ip_address:
       name: "SlimmeLezer IP Address"
