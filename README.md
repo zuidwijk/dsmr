@@ -20,5 +20,5 @@ This is a fork of https://github.com/zuidwijk/dsmr (please read this first), and
 ```
 
 ## Sensors
-This config will give you the following sensors avaliable:
+This config will give you the following sensors avaliable (example from Home Assistant):
 ![Sensors](https://i.imgur.com/S4UP0iD.jpg)
