@@ -26,6 +26,8 @@ esphome:
                 format: "Not using decryption key. If you need to set a key use Home Assistant service 'ESPHome:  ${device_name}_set_dsmr_key'"
 
 wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
   ap:
     ssid: ${device_name}
 
@@ -34,6 +36,7 @@ captive_portal:
 # Enable logging
 logger:
   baud_rate: 0
+
 
 # Enable Home Assistant API
 api:
@@ -61,6 +64,10 @@ dashboard_import:
 web_server:
   port: 80
 
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
 uart:
   baud_rate: 115200
   rx_pin: D7
@@ -84,29 +91,35 @@ dsmr:
 sensor:
   - platform: dsmr
     energy_delivered_lux:
-      name: "Energy Consumed Luxembourg"
-    energy_delivered_tariff1:
-      name: "Energy Consumed Tariff 1"
-    energy_delivered_tariff2:
-      name: "Energy Consumed Tariff 2"
+      name: "Energy Imported"
+      accuracy_decimals: 3
+#    energy_delivered_tariff1:
+#      name: "Energy Consumed Tariff 1"
+#      accuracy_decimals: 3
+#    energy_delivered_tariff2:
+#      name: "Energy Consumed Tariff 2"
+#      accuracy_decimals: 3
     energy_returned_lux:
-      name: "Energy Produced Luxembourg"
-    energy_returned_tariff1:
-      name: "Energy Produced Tariff 1"
-    energy_returned_tariff2:
-      name: "Energy Produced Tariff 2"
+      name: "Energy Exported"
+      accuracy_decimals: 3
+#    energy_returned_tariff1:
+#      name: "Energy Produced Tariff 1"
+#      accuracy_decimals: 3
+#    energy_returned_tariff2:
+#      name: "Energy Produced Tariff 2"
+#      accuracy_decimals: 3
     power_delivered:
-      name: "Power Consumed"
+      name: "Power Import"
       accuracy_decimals: 3
     power_returned:
-      name: "Power Produced"
+      name: "Power Export"
       accuracy_decimals: 3
-    electricity_failures:
-      name: "Electricity Failures"
-      icon: mdi:alert
-    electricity_long_failures:
-      name: "Long Electricity Failures"
-      icon: mdi:alert
+#    electricity_failures:
+#      name: "Electricity Failures"
+#      icon: mdi:alert
+#    electricity_long_failures:
+#      name: "Long Electricity Failures"
+#      icon: mdi:alert
     voltage_l1:
       name: "Voltage Phase 1"
     voltage_l2:
@@ -120,29 +133,30 @@ sensor:
     current_l3:
       name: "Current Phase 3"
     power_delivered_l1:
-      name: "Power Consumed Phase 1"
+      name: "Power Import Phase 1"
       accuracy_decimals: 3
     power_delivered_l2:
-      name: "Power Consumed Phase 2"
+      name: "Power Import Phase 2"
       accuracy_decimals: 3
     power_delivered_l3:
-      name: "Power Consumed Phase 3"
+      name: "Power Import Phase 3"
       accuracy_decimals: 3
     power_returned_l1:
-      name: "Power Produced Phase 1"
+      name: "Power Export Phase 1"
       accuracy_decimals: 3
     power_returned_l2:
-      name: "Power Produced Phase 2"
+      name: "Power Export Phase 2"
       accuracy_decimals: 3
     power_returned_l3:
-      name: "Power Produced Phase 3"
+      name: "Power Export Phase 3"
       accuracy_decimals: 3
-    gas_delivered:
-      name: "Gas Consumed"
-    gas_delivered_be:
-      name: "Gas Consumed Belgium"
+#    gas_delivered:
+#      name: "Gas Consumed"
+#    gas_delivered_be:
+#      name: "Gas Consumed Belgium"
   - platform: uptime
     name: "SlimmeLezer Uptime"
+    update_interval: 60s
   - platform: wifi_signal
     name: "SlimmeLezer Wi-Fi Signal"
     update_interval: 60s
@@ -151,10 +165,10 @@ text_sensor:
   - platform: dsmr
     identification:
       name: "DSMR Identification"
-    p1_version:
-      name: "DSMR Version"
-    p1_version_be:
-      name: "DSMR Version Belgium"
+#    p1_version:
+#      name: "DSMR Version"
+#    p1_version_be:
+#      name: "DSMR Version Belgium"
   - platform: wifi_info
     ip_address:
       name: "SlimmeLezer IP Address"
