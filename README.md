@@ -1,4 +1,4 @@
-# ESPHome configuration for Danish energy meters using DSMR
+# ESPHome configuration for Danish energy meters using DSMR on P1 port
 ![L+G E360 & Slimmelezer+](https://i.imgur.com/zvcqowP.jpg)
 
 ## Description
