@@ -2,7 +2,8 @@
 ![L+G E360 & Slimmelezer+](https://i.imgur.com/zvcqowP.jpg)
 
 ## Description
-This is a fork of https://github.com/zuidwijk/dsmr (please read this first)
+This is a fork of https://github.com/zuidwijk/dsmr (please read this first).
+
 The configuration (slimmelezer.yaml) is tested on a [Slimmelezer+](https://www.zuidwijk.com/product/slimmelezer-plus/) on a Landis+Gyr E360 energy meter from the Danish grid company "Netselskabet N1"
 
 ## How to use
