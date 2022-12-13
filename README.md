@@ -4,7 +4,7 @@
 ## Description
 This is a fork of https://github.com/zuidwijk/dsmr (please read this first).
 
-The configuration (slimmelezer.yaml) is tested and confirmed working on a [Slimmelezer+](https://www.zuidwijk.com/product/slimmelezer-plus/) on a Landis+Gyr E360 energy meter from the Danish grid companies
+The configuration (slimmelezer.yaml) is tested and confirmed working on a [Slimmelezer+](https://www.zuidwijk.com/product/slimmelezer-plus/) on a Landis+Gyr E360 energy meter from the Danish grid companies:
 - Netselskabet N1
 - Vores Elnet
 - Please let me know if you can confirm the configuration works on other grid companies as well, so I can update the list.
