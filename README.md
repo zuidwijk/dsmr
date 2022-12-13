@@ -1,10 +1,13 @@
-# ESPHome configuration for Danish (and perhaps other) energy meters using DSMR on P1 port
+# ESPHome configuration for Danish (and possibly other) energy meters using DSMR on P1 port
 ![L+G E360 & Slimmelezer+](https://i.imgur.com/zvcqowP.jpg)
 
 ## Description
 This is a fork of https://github.com/zuidwijk/dsmr (please read this first).
 
-The configuration (slimmelezer.yaml) is tested on a [Slimmelezer+](https://www.zuidwijk.com/product/slimmelezer-plus/) on a Landis+Gyr E360 energy meter from the Danish grid company "Netselskabet N1"
+The configuration (slimmelezer.yaml) is tested and confirmed working on a [Slimmelezer+](https://www.zuidwijk.com/product/slimmelezer-plus/) on a Landis+Gyr E360 energy meter from the Danish grid companies
+- Netselskabet N1
+- Vores Elnet
+- Please let me know if you can confirm the configuration works on other grid companies as well, so I can update the list.
 
 ## How to use
 - This configuration is only relevant for those countries where the OBIS values 1.8.0 and 2.8.0 etc are in use. If your utility company uses OBIS 1.8.1. 1.8.2. 2.8.1 and 2.8.2 I recommend that you use the configuration from the https://github.com/zuidwijk/dsmr repo. 
