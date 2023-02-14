@@ -10,6 +10,7 @@ The configuration (slimmelezer.yaml) is tested and confirmed working on a [Slimm
 - Please let me know if you can confirm the configuration works on other grid companies as well, so I can update the list.
 
 ## How to use
+- Make sure you have the Home Assistant Add-On ESPHome installed and updated to latest version. More info: https://esphome.io/guides/getting_started_hassio.html
 - This configuration is only relevant for those countries where the OBIS values 1.8.0 and 2.8.0 etc are in use. If your utility company uses OBIS 1.8.1. 1.8.2. 2.8.1 and 2.8.2 I recommend that you use the configuration from the https://github.com/zuidwijk/dsmr repo. 
 - First off, contact your utility company (Netselskab) to have the P1 port enabled, and await their confirmation.
 - Regarding Landis+Gyr E360, certain Energy Meter serial numbers (56xxxxx + 57xxxxx) have the wrong firmware, hence P1 port cannot be activated. N1 expects to have new firmware in Q1 2023. Energy Meters with serial number 58xxxxx and 59xxxxx can be activated right away.
