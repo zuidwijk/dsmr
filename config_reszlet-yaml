@@ -1,0 +1,141 @@
+uart:
+  rx_pin: D7
+  baud_rate: 115200
+  rx_buffer_size: 3000
+  # debug:
+  #  direction: RX
+  #  after:
+  #    delimiter: "\r\n"
+  #  sequence:
+  #   - lambda: UARTDebug::log_string(direction, bytes);
+
+dsmr:
+  id: dsmr_instance
+  crc_check: false
+  max_telegram_length: 3000
+  receive_timeout: 200ms
+
+captive_portal:
+
+sensor:
+  - platform: dsmr
+    energy_delivered:
+      name: "Hatásos import energia (+A)"
+    energy_delivered_tariff1:
+      name: "Hatásos import energia (+A) tarifa 1"
+    energy_delivered_tariff2:
+      name: "Hatásos import energia (+A) tarifa 2"
+
+    power_delivered:
+      name: "Pillanatnyi import teljesítmény (+A)"
+      accuracy_decimals: 3
+  
+    electricity_tariff:
+      name: "Aktuális tarifa"
+    frequency:
+      name: "Frekvencia"
+    energy_absolute:
+      name: "${device_friendly_name} Absolute active energy"
+ 
+    voltage_l1:
+      name: "Pillanatnyi fázis feszültség L1"
+    voltage_l2:
+      name: "Pillanatnyi fázis feszültség L2"
+    voltage_l3:
+      name: "Pillanatnyi fázis feszültség L3"
+    current_l1:
+      name: "Pillanatnyi áram L1"
+      accuracy_decimals: 3
+    current_l2:
+      name: "Pillanatnyi áram L2"
+      accuracy_decimals: 3
+    current_l3:
+      name: "Pillanatnyi áram L3"
+      accuracy_decimals: 3
+
+    instantaneous_power_factor:
+      name: "Pillanatnyi teljesítmény tényező"
+      device_class: power_factor
+    instantaneous_power_factor_l1:
+      name: "Pillanatnyi teljesítmény tényező L1"
+      device_class: power_factor
+    instantaneous_power_factor_l2:
+      name: "Pillanatnyi teljesítmény tényező L2"
+      device_class: power_factor
+    instantaneous_power_factor_l3:
+      name: "Pillanatnyi teljesítmény tényező L3"
+      device_class: power_factor
+    
+    reactive_power_qi:
+      name: "Pillanatnyi meddő teljesítmény (QI)"
+      device_class: reactive_power
+
+    # Napelemnél értelmezhető (vesz)
+    #reactive_power_qii:
+    #  name: "Pillanatnyi meddő teljesítmény (QII)"
+    #  device_class: reactive_power
+
+    # Napelemnél értelmezhető (vesz)
+    #reactive_power_qiii:
+    #  name: "Pillanatnyi meddő teljesítmény (QIII)"
+    #  device_class: reactive_power
+
+
+    reactive_power_qiv:
+      name: "Pillanatnyi meddő teljesítmény (QIV)"
+
+
+    reactive_power_delivered:
+      name: "Import meddő energia (+R)"
+
+
+    reactive_energy_qi:
+      name: "Meddő energia (QI)"
+
+    # Napelemnél értelmezhető (vesz)
+    #reactive_energy_qii:
+    #  name: "Meddő energia (QII)"
+
+    # Napelemnél értelmezhető (vesz)
+    #reactive_energy_qiii:
+    #  name: "Meddő energia (QIII)"
+
+    reactive_energy_qiv:
+      name: "Meddő energia (QIV)"
+
+    #Előrefizetős óráknál értelmezhető csak, nincs értelme egyébként használni
+    #electricity_threshold:
+    #  name: "Limiter határérték"
+    
+  
+ 
+  - platform: uptime
+    name: "SlimmeLezer Üzemidő"
+    device_class: duration
+  - platform: wifi_signal
+    name: "SlimmeLezer Wi-Fi jel"
+    update_interval: 60s
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "SlimmeLezer IP"
+      update_interval: 60s
+    ssid:
+      name: "SlimmeLezer Wi-Fi SSID"
+      update_interval: 60s
+    bssid:
+      name: "SlimmeLezer Wi-Fi BSSID"
+      update_interval: 60s
+ 
+  - platform: dsmr
+    #identification:
+    #  name: "COSEM logikai készüléknév"
+    #equipment_id:
+    #  name: "Mérő gyáriszám"
+    breaker_status:
+      name: "Megszakító státusz"
+ 
+  - platform: version
+    name: "ESPHome verzió és build"
+    hide_timestamp: false
