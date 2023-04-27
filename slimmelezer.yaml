@@ -98,9 +98,11 @@ sensor:
     power_delivered:
       name: "Power Consumed"
       accuracy_decimals: 3
+      id: power_delivered
     power_returned:
       name: "Power Produced"
       accuracy_decimals: 3
+      id: power_returned
     electricity_failures:
       name: "Electricity Failures"
       icon: mdi:alert
@@ -146,6 +148,16 @@ sensor:
   - platform: wifi_signal
     name: "SlimmeLezer Wi-Fi Signal"
     update_interval: 60s
+  - platform: template
+    name: "Power"
+    lambda: |-
+      if (id(power_returned) > 0) {
+        return (0 - id(power_returned).state);
+      } else {
+        return (id(power_delivered).state);
+      }
+    unit_of_measurement: kW
+    accuracy_decimals: 3
 
 text_sensor:
   - platform: dsmr
