@@ -151,7 +151,7 @@ sensor:
   - platform: template
     name: "Power"
     lambda: |-
-      if (id(power_returned) > 0) {
+      if (id(power_returned).state > id(power_delivered).state) {
         return (0 - id(power_returned).state);
       } else {
         return (id(power_delivered).state);
