@@ -10,7 +10,7 @@ esphome:
   name_add_mac_suffix: false
   project:
     name: zuidwijk.slimmelezer
-    version: "2.0"
+    version: "1.2"
   on_boot:
     then:
       - if:
