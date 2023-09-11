@@ -71,6 +71,9 @@ uart:
   baud_rate: 115200
   rx_pin: D7
   rx_buffer_size: 1700
+  # For Hungarian users only: change the increase the buffer size to 3000 in order to succesfully read the telegram
+  # Ha magyar vagy, akkor növeld a buffer size méretét 3000-re.
+  #rx_buffer_size: 3000
 
 globals:
   - id: has_key
@@ -86,6 +89,8 @@ dsmr:
   max_telegram_length: 1700
   # For Luxembourg users set here your decryption key
   #decryption_key: !secret decryption_key // enable this when using decryption for Luxembourg; key like '00112233445566778899AABBCCDDEEFF'
+  # For Hungarian users only: change the increase the telegram length to 3000 in order to succesfully decode the telegram
+  #max_telegram_length: 3000
 
 sensor:
   - platform: dsmr
