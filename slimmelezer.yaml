@@ -67,13 +67,6 @@ dashboard_import:
 web_server:
   port: 80
 
-uart:
-  baud_rate: 115200
-  rx_pin: D7
-  rx_buffer_size: 1700
-  # For Hungarian users only: change the increase the buffer size to 3000 in order to succesfully read the telegram
-  # Ha magyar vagy, akkor növeld a buffer size méretét 3000-re.
-  #rx_buffer_size: 3000
 
 globals:
   - id: has_key
@@ -84,95 +77,144 @@ globals:
     type: char[32]
     restore_value: yes
 
+uart:
+  rx_pin: D7
+  baud_rate: 115200
+  rx_buffer_size: 3000
+  # debug:
+  #  direction: RX
+  #  after:
+  #    delimiter: "\r\n"
+  #  sequence:
+  #   - lambda: UARTDebug::log_string(direction, bytes);
+
 dsmr:
   id: dsmr_instance
-  max_telegram_length: 1700
-  # For Luxembourg users set here your decryption key
-  #decryption_key: !secret decryption_key // enable this when using decryption for Luxembourg; key like '00112233445566778899AABBCCDDEEFF'
-  # For Hungarian users only: change the increase the telegram length to 3000 in order to succesfully decode the telegram
-  #max_telegram_length: 3000
+  crc_check: false
+  max_telegram_length: 3000
+  receive_timeout: 200ms
+
+captive_portal:
 
 sensor:
   - platform: dsmr
-    energy_delivered_lux:
-      name: "Energy Consumed Luxembourg"
+    energy_delivered:
+      name: "Hatásos import energia (+A)"
     energy_delivered_tariff1:
-      name: "Energy Consumed Tariff 1"
+      name: "Hatásos import energia (+A) tarifa 1"
     energy_delivered_tariff2:
-      name: "Energy Consumed Tariff 2"
-    energy_returned_lux:
-      name: "Energy Produced Luxembourg"
-    energy_returned_tariff1:
-      name: "Energy Produced Tariff 1"
-    energy_returned_tariff2:
-      name: "Energy Produced Tariff 2"
+      name: "Hatásos import energia (+A) tarifa 2"
+
     power_delivered:
-      name: "Power Consumed"
+      name: "Pillanatnyi import teljesítmény (+A)"
       accuracy_decimals: 3
-    power_returned:
-      name: "Power Produced"
-      accuracy_decimals: 3
-    electricity_failures:
-      name: "Electricity Failures"
-      icon: mdi:alert
-    electricity_long_failures:
-      name: "Long Electricity Failures"
-      icon: mdi:alert
+  
+    electricity_tariff:
+      name: "Aktuális tarifa"
+    frequency:
+      name: "Frekvencia"
+    energy_absolute:
+      name: "${device_friendly_name} Absolute active energy"
+ 
     voltage_l1:
-      name: "Voltage Phase 1"
+      name: "Pillanatnyi fázis feszültség L1"
     voltage_l2:
-      name: "Voltage Phase 2"
+      name: "Pillanatnyi fázis feszültség L2"
     voltage_l3:
-      name: "Voltage Phase 3"
+      name: "Pillanatnyi fázis feszültség L3"
     current_l1:
-      name: "Current Phase 1"
+      name: "Pillanatnyi áram L1"
+      accuracy_decimals: 3
     current_l2:
-      name: "Current Phase 2"
+      name: "Pillanatnyi áram L2"
+      accuracy_decimals: 3
     current_l3:
-      name: "Current Phase 3"
-    power_delivered_l1:
-      name: "Power Consumed Phase 1"
+      name: "Pillanatnyi áram L3"
       accuracy_decimals: 3
-    power_delivered_l2:
-      name: "Power Consumed Phase 2"
-      accuracy_decimals: 3
-    power_delivered_l3:
-      name: "Power Consumed Phase 3"
-      accuracy_decimals: 3
-    power_returned_l1:
-      name: "Power Produced Phase 1"
-      accuracy_decimals: 3
-    power_returned_l2:
-      name: "Power Produced Phase 2"
-      accuracy_decimals: 3
-    power_returned_l3:
-      name: "Power Produced Phase 3"
-      accuracy_decimals: 3
-    gas_delivered:
-      name: "Gas Consumed"
-    gas_delivered_be:
-      name: "Gas Consumed Belgium"
+
+    instantaneous_power_factor:
+      name: "Pillanatnyi teljesítmény tényező"
+      device_class: power_factor
+    instantaneous_power_factor_l1:
+      name: "Pillanatnyi teljesítmény tényező L1"
+      device_class: power_factor
+    instantaneous_power_factor_l2:
+      name: "Pillanatnyi teljesítmény tényező L2"
+      device_class: power_factor
+    instantaneous_power_factor_l3:
+      name: "Pillanatnyi teljesítmény tényező L3"
+      device_class: power_factor
+    
+    reactive_power_qi:
+      name: "Pillanatnyi meddő teljesítmény (QI)"
+      device_class: reactive_power
+
+    # Napelemnél értelmezhető (vesz)
+    #reactive_power_qii:
+    #  name: "Pillanatnyi meddő teljesítmény (QII)"
+    #  device_class: reactive_power
+
+    # Napelemnél értelmezhető (vesz)
+    #reactive_power_qiii:
+    #  name: "Pillanatnyi meddő teljesítmény (QIII)"
+    #  device_class: reactive_power
+
+
+    reactive_power_qiv:
+      name: "Pillanatnyi meddő teljesítmény (QIV)"
+
+
+    reactive_power_delivered:
+      name: "Import meddő energia (+R)"
+
+
+    reactive_energy_qi:
+      name: "Meddő energia (QI)"
+
+    # Napelemnél értelmezhető (vesz)
+    #reactive_energy_qii:
+    #  name: "Meddő energia (QII)"
+
+    # Napelemnél értelmezhető (vesz)
+    #reactive_energy_qiii:
+    #  name: "Meddő energia (QIII)"
+
+    reactive_energy_qiv:
+      name: "Meddő energia (QIV)"
+
+    #Előrefizetős óráknál értelmezhető csak, nincs értelme egyébként használni
+    #electricity_threshold:
+    #  name: "Limiter határérték"
+    
+  
+ 
   - platform: uptime
-    name: "SlimmeLezer Uptime"
+    name: "SlimmeLezer Üzemidő"
+    device_class: duration
   - platform: wifi_signal
-    name: "SlimmeLezer Wi-Fi Signal"
+    name: "SlimmeLezer Wi-Fi jel"
     update_interval: 60s
 
 text_sensor:
-  - platform: dsmr
-    identification:
-      name: "DSMR Identification"
-    p1_version:
-      name: "DSMR Version"
-    p1_version_be:
-      name: "DSMR Version Belgium"
   - platform: wifi_info
     ip_address:
-      name: "SlimmeLezer IP Address"
+      name: "SlimmeLezer IP"
+      update_interval: 60s
     ssid:
       name: "SlimmeLezer Wi-Fi SSID"
+      update_interval: 60s
     bssid:
       name: "SlimmeLezer Wi-Fi BSSID"
+      update_interval: 60s
+ 
+  - platform: dsmr
+    #identification:
+    #  name: "COSEM logikai készüléknév"
+    #equipment_id:
+    #  name: "Mérő gyáriszám"
+    breaker_status:
+      name: "Megszakító státusz"
+ 
   - platform: version
-    name: "ESPHome Version"
-    hide_timestamp: true
+    name: "ESPHome verzió és build"
+    hide_timestamp: false
