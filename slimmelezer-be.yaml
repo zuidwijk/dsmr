@@ -11,19 +11,6 @@ esphome:
   project:
     name: zuidwijk.slimmelezer
     version: "1.2"
-  on_boot:
-    then:
-      - if:
-          condition:
-            lambda: return id(has_key);
-          then:
-            - lambda: |-
-                std::string key(id(stored_decryption_key), 32);
-                id(dsmr_instance).set_decryption_key(key);
-          else:
-            - logger.log:
-                level: info
-                format: "Not using decryption key. If you need to set a key use Home Assistant service 'ESPHome:  ${device_name}_set_dsmr_key'"
 
 wifi:
   # remove leading '#' and fill in your wifi details
