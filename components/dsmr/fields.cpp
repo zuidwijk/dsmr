@@ -52,283 +52,328 @@ constexpr char units::GJ[];
 constexpr char units::MJ[];
 constexpr char units::kvar[];
 constexpr char units::kvarh[];
+constexpr char units::Hz[];
 
 constexpr ObisId identification::id;
-constexpr char identification::name_progmem[];
-constexpr const __FlashStringHelper *identification::name;
+constexpr char identification::name[];
 
 constexpr ObisId p1_version::id;
-constexpr char p1_version::name_progmem[];
-constexpr const __FlashStringHelper *p1_version::name;
+constexpr char p1_version::name[];
 
 /* extra field for Belgium */
 constexpr ObisId p1_version_be::id;
-constexpr char p1_version_be::name_progmem[];
-constexpr const __FlashStringHelper *p1_version_be::name;
+constexpr char p1_version_be::name[];
 
 constexpr ObisId timestamp::id;
-constexpr char timestamp::name_progmem[];
-constexpr const __FlashStringHelper *timestamp::name;
+constexpr char timestamp::name[];
 
 constexpr ObisId equipment_id::id;
-constexpr char equipment_id::name_progmem[];
-constexpr const __FlashStringHelper *equipment_id::name;
+constexpr char equipment_id::name[];
 
-/* extra for Lux */
-constexpr ObisId energy_delivered_lux::id;
-constexpr char energy_delivered_lux::name_progmem[];
-constexpr const __FlashStringHelper *energy_delivered_lux::name;
+constexpr ObisId energy_delivered::id;
+constexpr char energy_delivered::name[];
 
 constexpr ObisId energy_delivered_tariff1::id;
-constexpr char energy_delivered_tariff1::name_progmem[];
-constexpr const __FlashStringHelper *energy_delivered_tariff1::name;
+constexpr char energy_delivered_tariff1::name[];
 
 constexpr ObisId energy_delivered_tariff2::id;
-constexpr char energy_delivered_tariff2::name_progmem[];
-constexpr const __FlashStringHelper *energy_delivered_tariff2::name;
+constexpr char energy_delivered_tariff2::name[];
 
-/* extra for Lux */
-constexpr ObisId energy_returned_lux::id;
-constexpr char energy_returned_lux::name_progmem[];
-constexpr const __FlashStringHelper *energy_returned_lux::name;
+constexpr ObisId energy_delivered_tariff3::id;
+constexpr char energy_delivered_tariff3::name[];
+
+constexpr ObisId energy_delivered_tariff4::id;
+constexpr char energy_delivered_tariff4::name[];
+
+constexpr ObisId energy_returned::id;
+constexpr char energy_returned::name[];
 
 constexpr ObisId energy_returned_tariff1::id;
-constexpr char energy_returned_tariff1::name_progmem[];
-constexpr const __FlashStringHelper *energy_returned_tariff1::name;
+constexpr char energy_returned_tariff1::name[];
 
 constexpr ObisId energy_returned_tariff2::id;
-constexpr char energy_returned_tariff2::name_progmem[];
-constexpr const __FlashStringHelper *energy_returned_tariff2::name;
+constexpr char energy_returned_tariff2::name[];
 
-/* extra for Lux */
-constexpr ObisId total_imported_energy::id;
-constexpr char total_imported_energy::name_progmem[];
-constexpr const __FlashStringHelper *total_imported_energy::name;
+constexpr ObisId energy_returned_tariff3::id;
+constexpr char energy_returned_tariff3::name[];
 
-/* extra for Lux */
-constexpr ObisId total_exported_energy::id;
-constexpr char total_exported_energy::name_progmem[];
-constexpr const __FlashStringHelper *total_exported_energy::name;
+constexpr ObisId energy_returned_tariff4::id;
+constexpr char energy_returned_tariff4::name[];
+
+constexpr ObisId energy_absolute::id;
+constexpr char energy_absolute::name[];
+
+constexpr ObisId energy_absolute_tariff1::id;
+constexpr char energy_absolute_tariff1::name[];
+
+constexpr ObisId energy_absolute_tariff2::id;
+constexpr char energy_absolute_tariff2::name[];
+
+constexpr ObisId energy_absolute_tariff3::id;
+constexpr char energy_absolute_tariff3::name[];
+
+constexpr ObisId energy_absolute_tariff4::id;
+constexpr char energy_absolute_tariff4::name[];
+
+constexpr ObisId energy_sumwoblockade::id;
+constexpr char energy_sumwoblockade::name[];
+
+constexpr ObisId energy_sumwoblockade_tariff1::id;
+constexpr char energy_sumwoblockade_tariff1::name[];
+
+constexpr ObisId energy_sumwoblockade_tariff2::id;
+constexpr char energy_sumwoblockade_tariff2::name[];
+
+constexpr ObisId energy_sumwoblockade_tariff3::id;
+constexpr char energy_sumwoblockade_tariff3::name[];
+
+constexpr ObisId energy_sumwoblockade_tariff4::id;
+constexpr char energy_sumwoblockade_tariff4::name[];
+
+//constexpr ObisId energy_positive_reactive::id;
+//constexpr char energy_positive_reactive::name[];
+
+constexpr ObisId energy_positive_reactive_tariff1::id;
+constexpr char energy_positive_reactive_tariff1::name[];
+
+constexpr ObisId energy_positive_reactive_tariff2::id;
+constexpr char energy_positive_reactive_tariff2::name[];
+
+constexpr ObisId energy_positive_reactive_tariff3::id;
+constexpr char energy_positive_reactive_tariff3::name[];
+
+constexpr ObisId energy_positive_reactive_tariff4::id;
+constexpr char energy_positive_reactive_tariff4::name[];
+
+constexpr ObisId energy_negative_reactive::id;
+constexpr char energy_negative_reactive::name[];
+
+constexpr ObisId energy_negative_reactive_tariff1::id;
+constexpr char energy_negative_reactive_tariff1::name[];
+
+constexpr ObisId energy_negative_reactive_tariff2::id;
+constexpr char energy_negative_reactive_tariff2::name[];
+
+constexpr ObisId energy_negative_reactive_tariff3::id;
+constexpr char energy_negative_reactive_tariff3::name[];
+
+constexpr ObisId energy_negative_reactive_tariff4::id;
+constexpr char energy_negative_reactive_tariff4::name[];
 
 /* extra for Lux */
 constexpr ObisId reactive_power_delivered::id;
-constexpr char reactive_power_delivered::name_progmem[];
-constexpr const __FlashStringHelper *reactive_power_delivered::name;
+constexpr char reactive_power_delivered::name[];
 
 /* extra for Lux */
 constexpr ObisId reactive_power_returned::id;
-constexpr char reactive_power_returned::name_progmem[];
-constexpr const __FlashStringHelper *reactive_power_returned::name;
+constexpr char reactive_power_returned::name[];
 
 constexpr ObisId electricity_tariff::id;
-constexpr char electricity_tariff::name_progmem[];
-constexpr const __FlashStringHelper *electricity_tariff::name;
+constexpr char electricity_tariff::name[];
+
+constexpr ObisId breaker_status::id;
+constexpr char breaker_status::name[];
 
 constexpr ObisId power_delivered::id;
-constexpr char power_delivered::name_progmem[];
-constexpr const __FlashStringHelper *power_delivered::name;
+constexpr char power_delivered::name[];
 
 constexpr ObisId power_returned::id;
-constexpr char power_returned::name_progmem[];
-constexpr const __FlashStringHelper *power_returned::name;
+constexpr char power_returned::name[];
+
+// constexpr ObisId absolute_active_energy::id;
+// constexpr char absolute_active_energy::name[];
 
 constexpr ObisId electricity_threshold::id;
-constexpr char electricity_threshold::name_progmem[];
-constexpr const __FlashStringHelper *electricity_threshold::name;
+constexpr char electricity_threshold::name[];
 
 constexpr ObisId electricity_switch_position::id;
-constexpr char electricity_switch_position::name_progmem[];
-constexpr const __FlashStringHelper *electricity_switch_position::name;
+constexpr char electricity_switch_position::name[];
 
 constexpr ObisId electricity_failures::id;
-constexpr char electricity_failures::name_progmem[];
-constexpr const __FlashStringHelper *electricity_failures::name;
+constexpr char electricity_failures::name[];
 
 constexpr ObisId electricity_long_failures::id;
-constexpr char electricity_long_failures::name_progmem[];
-constexpr const __FlashStringHelper *electricity_long_failures::name;
+constexpr char electricity_long_failures::name[];
 
 constexpr ObisId electricity_failure_log::id;
-constexpr char electricity_failure_log::name_progmem[];
-constexpr const __FlashStringHelper *electricity_failure_log::name;
+constexpr char electricity_failure_log::name[];
 
 constexpr ObisId electricity_sags_l1::id;
-constexpr char electricity_sags_l1::name_progmem[];
-constexpr const __FlashStringHelper *electricity_sags_l1::name;
+constexpr char electricity_sags_l1::name[];
 
 constexpr ObisId electricity_sags_l2::id;
-constexpr char electricity_sags_l2::name_progmem[];
-constexpr const __FlashStringHelper *electricity_sags_l2::name;
+constexpr char electricity_sags_l2::name[];
 
 constexpr ObisId electricity_sags_l3::id;
-constexpr char electricity_sags_l3::name_progmem[];
-constexpr const __FlashStringHelper *electricity_sags_l3::name;
+constexpr char electricity_sags_l3::name[];
 
 constexpr ObisId electricity_swells_l1::id;
-constexpr char electricity_swells_l1::name_progmem[];
-constexpr const __FlashStringHelper *electricity_swells_l1::name;
+constexpr char electricity_swells_l1::name[];
 
 constexpr ObisId electricity_swells_l2::id;
-constexpr char electricity_swells_l2::name_progmem[];
-constexpr const __FlashStringHelper *electricity_swells_l2::name;
+constexpr char electricity_swells_l2::name[];
 
 constexpr ObisId electricity_swells_l3::id;
-constexpr char electricity_swells_l3::name_progmem[];
-constexpr const __FlashStringHelper *electricity_swells_l3::name;
+constexpr char electricity_swells_l3::name[];
 
 constexpr ObisId message_short::id;
-constexpr char message_short::name_progmem[];
-constexpr const __FlashStringHelper *message_short::name;
+constexpr char message_short::name[];
 
 constexpr ObisId message_long::id;
-constexpr char message_long::name_progmem[];
-constexpr const __FlashStringHelper *message_long::name;
+constexpr char message_long::name[];
 
 constexpr ObisId voltage_l1::id;
-constexpr char voltage_l1::name_progmem[];
-constexpr const __FlashStringHelper *voltage_l1::name;
+constexpr char voltage_l1::name[];
 
 constexpr ObisId voltage_l2::id;
-constexpr char voltage_l2::name_progmem[];
-constexpr const __FlashStringHelper *voltage_l2::name;
+constexpr char voltage_l2::name[];
 
 constexpr ObisId voltage_l3::id;
-constexpr char voltage_l3::name_progmem[];
-constexpr const __FlashStringHelper *voltage_l3::name;
+constexpr char voltage_l3::name[];
 
 constexpr ObisId current_l1::id;
-constexpr char current_l1::name_progmem[];
-constexpr const __FlashStringHelper *current_l1::name;
+constexpr char current_l1::name[];
 
 constexpr ObisId current_l2::id;
-constexpr char current_l2::name_progmem[];
-constexpr const __FlashStringHelper *current_l2::name;
+constexpr char current_l2::name[];
 
 constexpr ObisId current_l3::id;
-constexpr char current_l3::name_progmem[];
-constexpr const __FlashStringHelper *current_l3::name;
+constexpr char current_l3::name[];
 
 constexpr ObisId power_delivered_l1::id;
-constexpr char power_delivered_l1::name_progmem[];
-constexpr const __FlashStringHelper *power_delivered_l1::name;
+constexpr char power_delivered_l1::name[];
 
 constexpr ObisId power_delivered_l2::id;
-constexpr char power_delivered_l2::name_progmem[];
-constexpr const __FlashStringHelper *power_delivered_l2::name;
+constexpr char power_delivered_l2::name[];
 
 constexpr ObisId power_delivered_l3::id;
-constexpr char power_delivered_l3::name_progmem[];
-constexpr const __FlashStringHelper *power_delivered_l3::name;
+constexpr char power_delivered_l3::name[];
 
 constexpr ObisId power_returned_l1::id;
-constexpr char power_returned_l1::name_progmem[];
-constexpr const __FlashStringHelper *power_returned_l1::name;
+constexpr char power_returned_l1::name[];
 
 constexpr ObisId power_returned_l2::id;
-constexpr char power_returned_l2::name_progmem[];
-constexpr const __FlashStringHelper *power_returned_l2::name;
+constexpr char power_returned_l2::name[];
 
 constexpr ObisId power_returned_l3::id;
-constexpr char power_returned_l3::name_progmem[];
-constexpr const __FlashStringHelper *power_returned_l3::name;
+constexpr char power_returned_l3::name[];
+
+constexpr ObisId reactive_power_qi::id;
+constexpr char reactive_power_qi::name[];
+
+constexpr ObisId reactive_power_qii::id;
+constexpr char reactive_power_qii::name[];
+
+constexpr ObisId reactive_power_qiii::id;
+constexpr char reactive_power_qiii::name[];
+
+constexpr ObisId reactive_power_qiv::id;
+constexpr char reactive_power_qiv::name[];
+
+constexpr ObisId reactive_energy_qi::id;
+constexpr char reactive_energy_qi::name[];
+
+constexpr ObisId reactive_energy_qii::id;
+constexpr char reactive_energy_qii::name[];
+
+constexpr ObisId reactive_energy_qiii::id;
+constexpr char reactive_energy_qiii::name[];
+
+constexpr ObisId reactive_energy_qiv::id;
+constexpr char reactive_energy_qiv::name[];
+
+constexpr ObisId instantaneous_power_factor::id;
+constexpr char instantaneous_power_factor::name[];
+
+constexpr ObisId instantaneous_power_factor_l1::id;
+constexpr char instantaneous_power_factor_l1::name[];
+
+constexpr ObisId instantaneous_power_factor_l2::id;
+constexpr char instantaneous_power_factor_l2::name[];
+
+constexpr ObisId instantaneous_power_factor_l3::id;
+constexpr char instantaneous_power_factor_l3::name[];
+
+constexpr ObisId frequency::id;
+constexpr char frequency::name[];
+
 
 /* LUX */
 constexpr ObisId reactive_power_delivered_l1::id;
-constexpr char reactive_power_delivered_l1::name_progmem[];
-constexpr const __FlashStringHelper *reactive_power_delivered_l1::name;
+constexpr char reactive_power_delivered_l1::name[];
 
 /* LUX */
 constexpr ObisId reactive_power_delivered_l2::id;
-constexpr char reactive_power_delivered_l2::name_progmem[];
-constexpr const __FlashStringHelper *reactive_power_delivered_l2::name;
+constexpr char reactive_power_delivered_l2::name[];
 
 /* LUX */
 constexpr ObisId reactive_power_delivered_l3::id;
-constexpr char reactive_power_delivered_l3::name_progmem[];
-constexpr const __FlashStringHelper *reactive_power_delivered_l3::name;
+constexpr char reactive_power_delivered_l3::name[];
 
 /* LUX */
 constexpr ObisId reactive_power_returned_l1::id;
-constexpr char reactive_power_returned_l1::name_progmem[];
-constexpr const __FlashStringHelper *reactive_power_returned_l1::name;
+constexpr char reactive_power_returned_l1::name[];
 
 /* LUX */
 constexpr ObisId reactive_power_returned_l2::id;
-constexpr char reactive_power_returned_l2::name_progmem[];
-constexpr const __FlashStringHelper *reactive_power_returned_l2::name;
+constexpr char reactive_power_returned_l2::name[];
 
 /* LUX */
 constexpr ObisId reactive_power_returned_l3::id;
-constexpr char reactive_power_returned_l3::name_progmem[];
-constexpr const __FlashStringHelper *reactive_power_returned_l3::name;
+constexpr char reactive_power_returned_l3::name[];
 
 constexpr ObisId gas_device_type::id;
-constexpr char gas_device_type::name_progmem[];
-constexpr const __FlashStringHelper *gas_device_type::name;
+constexpr char gas_device_type::name[];
 
 constexpr ObisId gas_equipment_id::id;
-constexpr char gas_equipment_id::name_progmem[];
-constexpr const __FlashStringHelper *gas_equipment_id::name;
+constexpr char gas_equipment_id::name[];
 
 constexpr ObisId gas_valve_position::id;
-constexpr char gas_valve_position::name_progmem[];
-constexpr const __FlashStringHelper *gas_valve_position::name;
+constexpr char gas_valve_position::name[];
 
 /* _NL */
 constexpr ObisId gas_delivered::id;
-constexpr char gas_delivered::name_progmem[];
-constexpr const __FlashStringHelper *gas_delivered::name;
+constexpr char gas_delivered::name[];
 
 /* _BE */
 constexpr ObisId gas_delivered_be::id;
-constexpr char gas_delivered_be::name_progmem[];
-constexpr const __FlashStringHelper *gas_delivered_be::name;
+constexpr char gas_delivered_be::name[];
+
+constexpr ObisId gas_delivered_text::id;
+constexpr char gas_delivered_text::name[];
 
 constexpr ObisId thermal_device_type::id;
-constexpr char thermal_device_type::name_progmem[];
-constexpr const __FlashStringHelper *thermal_device_type::name;
+constexpr char thermal_device_type::name[];
 
 constexpr ObisId thermal_equipment_id::id;
-constexpr char thermal_equipment_id::name_progmem[];
-constexpr const __FlashStringHelper *thermal_equipment_id::name;
+constexpr char thermal_equipment_id::name[];
 
 constexpr ObisId thermal_valve_position::id;
-constexpr char thermal_valve_position::name_progmem[];
-constexpr const __FlashStringHelper *thermal_valve_position::name;
+constexpr char thermal_valve_position::name[];
 
 constexpr ObisId thermal_delivered::id;
-constexpr char thermal_delivered::name_progmem[];
-constexpr const __FlashStringHelper *thermal_delivered::name;
+constexpr char thermal_delivered::name[];
 
 constexpr ObisId water_device_type::id;
-constexpr char water_device_type::name_progmem[];
-constexpr const __FlashStringHelper *water_device_type::name;
+constexpr char water_device_type::name[];
 
 constexpr ObisId water_equipment_id::id;
-constexpr char water_equipment_id::name_progmem[];
-constexpr const __FlashStringHelper *water_equipment_id::name;
+constexpr char water_equipment_id::name[];
 
 constexpr ObisId water_valve_position::id;
-constexpr char water_valve_position::name_progmem[];
-constexpr const __FlashStringHelper *water_valve_position::name;
+constexpr char water_valve_position::name[];
 
 constexpr ObisId water_delivered::id;
-constexpr char water_delivered::name_progmem[];
-constexpr const __FlashStringHelper *water_delivered::name;
+constexpr char water_delivered::name[];
 
-constexpr ObisId slave_device_type::id;
-constexpr char slave_device_type::name_progmem[];
-constexpr const __FlashStringHelper *slave_device_type::name;
+constexpr ObisId sub_device_type::id;
+constexpr char sub_device_type::name[];
 
-constexpr ObisId slave_equipment_id::id;
-constexpr char slave_equipment_id::name_progmem[];
-constexpr const __FlashStringHelper *slave_equipment_id::name;
+constexpr ObisId sub_equipment_id::id;
+constexpr char sub_equipment_id::name[];
 
-constexpr ObisId slave_valve_position::id;
-constexpr char slave_valve_position::name_progmem[];
-constexpr const __FlashStringHelper *slave_valve_position::name;
+constexpr ObisId sub_valve_position::id;
+constexpr char sub_valve_position::name[];
 
-constexpr ObisId slave_delivered::id;
-constexpr char slave_delivered::name_progmem[];
-constexpr const __FlashStringHelper *slave_delivered::name;
-
+constexpr ObisId sub_delivered::id;
+constexpr char sub_delivered::name[];
