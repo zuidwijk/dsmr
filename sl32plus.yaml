@@ -67,6 +67,7 @@ api:
           id(dsmr_instance).set_decryption_key(private_key);
 
 ota:
+  platform: esphome
 
 dashboard_import:
   package_import_url: github://zuidwijk/dsmr/sl32plus.yaml@main
