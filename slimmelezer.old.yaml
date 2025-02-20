@@ -4,10 +4,13 @@ substitutions:
     
 esphome:
   name: ${device_name}
+  platform: ESP8266
+  esp8266_restore_from_flash: true
+  board: d1_mini
   name_add_mac_suffix: false
   project:
     name: zuidwijk.slimmelezer
-    version: "2.0"
+    version: "1.2"
   on_boot:
     then:
       - if:
@@ -22,29 +25,20 @@ esphome:
                 level: info
                 format: "Not using decryption key. If you need to set a key use Home Assistant service 'ESPHome:  ${device_name}_set_dsmr_key'"
 
-esp8266:
-  restore_from_flash: true
-  board: d1_mini
-
 wifi:
-  # remove leading '#' and fill in your wifi details !!
+  # remove leading '#' and fill in your wifi details
 #  ssid: !secret wifi_ssid 
 #  password: !secret wifi_password
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: ${device_name}
-  
-  # Powersaving for brownout due to 250mA restriction P1
-  output_power: 14dB
 
 captive_portal:
 
 # Enable logging
 logger:
   baud_rate: 0
-#  logs: 
-#    component: ERROR
 
 # Enable Home Assistant API
 api:
@@ -168,8 +162,6 @@ text_sensor:
       name: "DSMR Version"
     p1_version_be:
       name: "DSMR Version Belgium"
-#    timestamp:
-#      name: "Timestamp"
   - platform: wifi_info
     ip_address:
       name: "SlimmeLezer IP Address"
