@@ -69,7 +69,7 @@ ota:
   platform: esphome
 
 dashboard_import:
-  package_import_url: github://bollewolle/dsmr/slimmelezer-be.yaml@main
+  package_import_url: github://zuidwijk/dsmr/slimmelezer-be.yaml@main
   import_full_config: true
 
 web_server:
