@@ -62,8 +62,10 @@ api:
           if (private_key.length() == 32)
             private_key.copy(id(stored_decryption_key), 32);
           id(dsmr_instance).set_decryption_key(private_key.c_str());
+
 ota:
-  platform: esphome
+  - platform: esphome
+  - platform: web_server
 
 dashboard_import:
   package_import_url: github://zuidwijk/dsmr/slimmelezer.yaml@main
