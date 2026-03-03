@@ -13,7 +13,7 @@ The [SlimmeLezer](https://www.zuidwijk.com/product/slimmelezer/) is a compact bu
 ![IMG_2887](https://user-images.githubusercontent.com/10123063/127781814-8bbe0781-5bdb-4e65-97ac-509afdb0b72d.jpeg)
 
 ## DSMR component
-The main goal is to create one universal component, which can be used in every country. Though the DSMR (Dutch Smart Meter Requirements) is [specified](https://www.netbeheernederland.nl/_upload/Files/Slimme_meter_15_a727fce1f1.pdf) with pre specified OBIS code, not every country has exact the same code. Some examples:
+The main goal is to create one universal component, which can be used in every country. Though the DSMR (Dutch Smart Meter Requirements) is [specified](https://www.netbeheernederland.nl/sites/default/files/2024-02/dsmr_5.0.2_p1_companion_standard.pdf) with pre specified OBIS code, not every country has exact the same code. Some examples:
 
 **Version information for P1 output**
 - Default OBIS: 1-3:0.2.8.255
