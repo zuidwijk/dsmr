@@ -16,7 +16,6 @@ esphome:
           then:
             - lambda: |-
                 id(dsmr_instance).set_decryption_key(id(stored_decryption_key));
-          else:
             - logger.log:
                 level: info
                 format: "Not using decryption key. If you need to set a key use Home Assistant service 'ESPHome:  ${device_name}_set_dsmr_key'"
@@ -35,7 +34,7 @@ wifi:
     ssid: ${device_name}
   
   # Powersaving for brownout due to 250mA restriction P1
-  output_power: 10dB
+  #output_power: 10dB
 
 captive_portal:
 
@@ -87,6 +86,34 @@ globals:
   - id: stored_decryption_key
     type: char[32]
     restore_value: yes
+
+## RESET FUNCTION ##
+switch:
+  - platform: factory_reset
+    name: Restart with Factory Default Settings
+    id: resetbutton
+    internal: true
+
+binary_sensor:
+  - platform: gpio
+    name: "Reset switch GPIO5"
+    pin: 
+      number: GPIO5
+      mode:
+        input: true
+        pullup: false
+    on_press: 
+      then:
+        - logger.log: "Reset button pressed"
+        - switch.turn_on: resetbutton
+
+light:
+  - platform: status_led
+    name: "Status LED"
+    pin: 
+      number: GPIO02
+      inverted: true
+## END RESET FUNCTION ##
 
 dsmr:
   id: dsmr_instance
