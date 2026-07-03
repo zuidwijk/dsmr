@@ -121,6 +121,12 @@ sensor:
       unit_of_measurement: "m³"
       id: gas_delivered_belgium
       state_class: total_increasing
+    active_energy_import_current_average_demand:
+      name: "Current Average Demand"
+    active_energy_import_maximum_demand_running_month:
+      name: "Maximum Demand Running Month"
+    active_energy_import_maximum_demand_last_13_months:
+      name: "Maximum Demand Last 13 Months"
   - platform: uptime
     name: "SlimmeLezer Uptime"
   - platform: wifi_signal
